@@ -8,6 +8,7 @@
 .art{
   width: 100%;
   position: absolute;
+  z-index: 0;
 }
 
 #title {
@@ -21,14 +22,29 @@
 
 #start {
   position: absolute;
+  top: 300px;
+  left: 700px;
 }
 
 .popup{
   visibility: hidden;
+  opacity: 90%;
+  z-index: 1;
+}
+
+button .popup {
+  opacity: 100%;
+}
+
+button: hover{
+  background-color: #00008B;
 }
 
 .open-popup {
   visibility: visible;
+}
+.close-popup {
+  visibility: hidden;
 }
 
 
