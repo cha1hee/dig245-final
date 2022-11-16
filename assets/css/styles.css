@@ -1,10 +1,13 @@
 
 /* css */
-.envelope {
-  width: 100%;
-}
+
 .firstSpace {
   height: 100px;
+}
+
+.art{
+  width: 100%;
+  position: absolute;
 }
 
 #title {
@@ -12,4 +15,31 @@
   font-weight: bold;
   position: relative;
   z-index: 1;
+  font-family: inherit;
+  right: -25%;
+}
+
+#start {
+  position: absolute;
+}
+
+.popup{
+  visibility: hidden;
+}
+
+.open-popup {
+  visibility: visible;
+}
+
+
+.popup {
+  width: 400px;
+  background: grey;
+  border-radius: 6px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  text-align: center;
+  padding: 0 30px 30px;
 }
