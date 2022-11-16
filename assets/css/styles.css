@@ -11,6 +11,14 @@
   z-index: 0;
 }
 
+.scam {
+  background-color: red;
+}
+
+.real {
+  background-color: green;
+}
+
 #title {
   font-size: 128px;
   font-weight: bold;
@@ -51,6 +59,17 @@ button: hover{
 .popup {
   width: 400px;
   background: grey;
+  border-radius: 6px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  text-align: center;
+  padding: 0 30px 30px;
+}
+.popupResults {
+  width: 400px;
+  /* background: grey; */
   border-radius: 6px;
   position: fixed;
   top: 50%;
