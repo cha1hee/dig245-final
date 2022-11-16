@@ -1,2 +1,15 @@
 
 /* css */
+.envelope {
+  width: 100%;
+}
+.firstSpace {
+  height: 100px;
+}
+
+#title {
+  font-size: 128px;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
