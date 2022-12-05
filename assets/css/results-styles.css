@@ -20,6 +20,10 @@ a {
   margin: 25.5px 0;
 }
 
+.logo{
+  padding: 13px;
+}
+
 .trash:active svg {
   fill: #D50000;
 }
