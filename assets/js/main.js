@@ -221,7 +221,7 @@ $(document).ready(function() {
     emailList += `
 
         <a href="#" class="email" data-email="${i}">
-          <div class="row">
+          <div class="row" style="height:95px;">
             <div class="col-9" style="padding:10px 10px 10px 40px;">
 
 
@@ -231,11 +231,23 @@ $(document).ready(function() {
 
 
           </div>
-          <div class="col-1 align-middle">
-            <svg  class="trash" width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 23L1 4.88235H18L15 23H4Z" stroke="#6B6767" stroke-width="0.5"/>
-            <path d="M1 4.01961V2.29412H8V1H11V2.29412H18V4.01961H1Z" stroke="#6B6767" stroke-width="0.5"/>
+
+          <div class="col-1 trash">
+            <svg  width="19" height="24" viewBox="0 0 19 24" fill="black" fill-opacity="0" xmlns="http://www.w3.org/2000/svg">
+              <a href="mailpractice.html">
+              <path d="M4 23L1 4.88235H18L15 23H4Z" stroke="#6B6767" stroke-width="0.5"/>
+              <path d="M1 4.01961V2.29412H8V1H11V2.29412H18V4.01961H1Z" stroke="#6B6767" stroke-width="0.5"/>
+              </a>
             </svg>
+
+          </div>
+          <div class="col-1 flag text-center">
+          <svg width="19" height="23" viewBox="0 0 19 23" fill="red" fill-opacity="0" xmlns="http://www.w3.org/2000/svg">
+            <a href="mailpractice.html">
+            <path d="M1 13.18V1.42V1H3.125V2.26L18 7.72L3.125 13.18V22H1V13.18Z" stroke="#6B6767" stroke-width="0.5"/>
+            </a>
+          </svg>
+
           </div>
         </div>
         </a>
