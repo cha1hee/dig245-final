@@ -13,12 +13,12 @@ a{
   overflow-wrap:break-word;
 }
 
-.objective{
+.results{
   padding:16px;
 }
 
-.prof-pic {
-  padding:11px;
+.final-ans, .confused {
+  margin: 25.5px 0;
 }
 
 .trash:active svg {
@@ -95,10 +95,6 @@ a{
   font-size: 24px;
 }
 
-.final-ans, .confused {
-  margin: 25.5px 0;
-}
-
 .email-body::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -111,4 +107,37 @@ a{
 .email-body::-webkit-scrollbar-track{
   background: rgba(0,0,0,0.2);
   border-radius: 0 10px 10px 0;
+}
+
+[data-email="0"]{
+  background-color: green;
+}
+
+[data-email="1"]{
+  background-color: red;
+}
+
+[data-email="2"]{
+  background-color: red;
+}
+
+[data-email="3"]{
+  background-color: red;
+}
+
+[data-email="4"]{
+  background-color: green;
+}
+
+[data-email="5"]{
+  background-color: red;
+}
+[data-email="6"]{
+  background-color: red;
+}
+[data-email="7"]{
+  background-color: green;
+}
+[data-email="8"]{
+  background-color: green;
 }
