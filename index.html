@@ -10,73 +10,49 @@
 	</head>
 
 	<body>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col gx-0">
-					<img class="art"src="assets/img/envelope.svg" alt="drawing of an envelope" >
+
+		<div class="container-fluid">
+			<!-- <div class="tophead"> -->
+				<div class="row">
+					<div class="tophead">
+						<div class="row">
+							<div class="col-1"></div>
+							<div class="col-1" style="font-size: 36px;">
+								Mail
+							</div>
+							<div class="col-8 align-middle" style="font-size: 16px;">
+								Objective: Delete the malicious emails and flag the ones that need more examination
+							</div>
+						</div>
+					</div>
+				</div>
+			<!-- </div> -->
+			<div class="row">
+				<div class="search-bar">
+					<div class="row">
+						<div class="col-1"></div>
+						<div class="col-8">
+							<input class="search" type="text" placeholder="Search...">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-1"></div>
+				<div class="col-10">
+						<div class="row" id="email-holder">
+								<div class="col-4 emailList">
+						      Emails go here
+						    </div>
+								<div class="col-8 email-body">
+									<p style="color:grey;">You are not currently viewing any emails...</p>
+							</div>
+					  </div>
+				</div>
+				<div class="col-1"></div>
 			</div>
 		</div>
-	</div>
 
-
-	<p id="title" >Mal or Pal?</p>
-	<div class="container">
-			<a type="button" class="btn btn-primary btn-lg" id="start">Start</a>
-	</div>
-
-	<div class="popup" id="q1">
-		<p>Here is the first question</p>
-		<button type="button" class="btn btn-primary scam" id="scam1">Scam</button>
-		<button type="button" class="btn btn-primary real" id="real1">Real</button>
-	</div>
-	<div class="popup" id="q2">
-		<p>Here is the second question</p>
-		<button type="button" class="btn btn-primary scam" id="scam2">Scam</button>
-		<button type="button" class="btn btn-primary real" id="real2">Real</button>
-	</div>
-	<div class="popup" id="q3">
-		<p>Here is the third question</p>
-		<button type="button" class="btn btn-primary scam" id="scam3">Scam</button>
-		<button type="button" class="btn btn-primary real" id="real3">Real</button>
-	</div>
-	<div class="popup" id="q4">
-		<p>Here is the fourth question</p>
-		<button type="button" class="btn btn-primary scam" id="scam4">Scam</button>
-		<button type="button" class="btn btn-primary real" id="real4">Real</button>
-	</div>
-	<div class="popup" id="q5">
-		<p>Here is the fifth question</p>
-		<button type="button" class="btn btn-primary scam" id="scam5">Scam</button>
-		<button type="button" class="btn btn-primary real" id="real5">Real</button>
-	</div>
-	<div class="popup" id="q6">
-		<p>Here is the sixth question</p>
-		<button type="button" class="btn btn-primary scam" id="scam6">Scam</button>
-		<button type="button" class="btn btn-primary real" id="real6">Real</button>
-	</div>
-	<div class="popup" id="q7">
-		<p>Here is the seventh question</p>
-		<button type="button" class="btn btn-primary scam" id="scam7">Scam</button>
-		<button type="button" class="btn btn-primary real" id="real7">Real</button>
-	</div>
-	<div class="popup" id="q8">
-		<p>Here is the eighth question</p>
-		<button type="button" class="btn btn-primary scam" id="scam8">Scam</button>
-		<button type="button" class="btn btn-primary real" id="real8">Real</button>
-	</div>
-	<div class="popup" id="q9">
-		<p>Here is the ninth question</p>
-		<button type="button" class="btn btn-primary scam" id="scam9">Scam</button>
-		<button type="button" class="btn btn-primary real" id="real9">Real</button>
-	</div>
-	<div class="popup" id="q10">
-		<p>Here is the tenth question</p>
-		<button type="button" class="btn btn-primary scam" id="scam10">Scam</button>
-		<button type="button" class="btn btn-primary real" id="real10">Real</button>
-	</div>
-	<div class="popupResults" id="results">
-		<p>You opened </p>
-	</div>
 
 
 		<!-- jquery -->
