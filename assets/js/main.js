@@ -196,6 +196,11 @@ You have received this email because rubenjohnsoin@yourcompany.com shared a docu
 
 ];
 
+let answerKey=[2, -1, -1, -1, 1, -1, 1, 1, -1];
+let userAns = [1, 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1];
+
+
+
 // extracting just the words from body (no html elements)
 function extractContent(s) {
   var span = document.createElement('span');
@@ -221,7 +226,7 @@ $(document).ready(function() {
     emailList += `
 
         <a href="#" class="email" data-email="${i}">
-          <div class="row" style="height:95px;">
+          <div class="row">
             <div class="col-9" style="padding:10px 10px 10px 40px;">
 
 
@@ -234,18 +239,14 @@ $(document).ready(function() {
 
           <div class="col-1 trash">
             <svg  width="19" height="24" viewBox="0 0 19 24" fill="black" fill-opacity="0" xmlns="http://www.w3.org/2000/svg">
-              <a href="mailpractice.html">
               <path d="M4 23L1 4.88235H18L15 23H4Z" stroke="#6B6767" stroke-width="0.5"/>
               <path d="M1 4.01961V2.29412H8V1H11V2.29412H18V4.01961H1Z" stroke="#6B6767" stroke-width="0.5"/>
-              </a>
             </svg>
 
           </div>
           <div class="col-1 flag text-center">
-          <svg width="19" height="23" viewBox="0 0 19 23" fill="red" fill-opacity="0" xmlns="http://www.w3.org/2000/svg">
-            <a href="mailpractice.html">
+            <svg width="19" height="23" viewBox="0 0 19 23" fill="red" fill-opacity="0" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 13.18V1.42V1H3.125V2.26L18 7.72L3.125 13.18V22H1V13.18Z" stroke="#6B6767" stroke-width="0.5"/>
-            </a>
           </svg>
 
           </div>
@@ -254,7 +255,7 @@ $(document).ready(function() {
 
      `;
   });
-  $(".emailList").html(emailList);
+  $(".email-list").html(emailList);
 
   // add listener to each email clicked
   $(".email").on("click", function() {
@@ -279,6 +280,53 @@ $(document).ready(function() {
 
     $(".email-body").html(str);
   });
+
+  $('*[data-email] .trash svg').on("click",function(){
+    let indexAns = -1;
+    let ansVal;
+    indexAns = ($(this).parent().parent().parent().data("email"));
+    ansVal = userAns[indexAns];
+
+    if (ansVal % 2 == 0 && ansVal > 0) {
+      $(this).attr("fill-opacity",1);
+      userAns[indexAns] = ansVal / (-2);
+      $('[data-email = "indexAns"] .flag svg').attr("fill-opacity",0);
+    }
+    else if (ansVal < 0) {
+      $(this).attr("fill-opacity",0);
+      userAns[indexAns] = ansVal * (-1);
+    }
+    else{
+      $(this).attr("fill-opacity",1);
+      userAns[indexAns] = ansVal * (-1);
+    }
+  });
+
+
+  $('*[data-email] .flag svg').on("click",function(){
+    let indexAns = -1;
+    let ansVal;
+    indexAns = ($(this).parent().parent().parent().data("email"));
+    ansVal = userAns[indexAns];
+    if(userAns < 0){
+      $(this).attr("fill-opacity",1);
+      userAns[indexAns] = ansVal * (-2);
+      $('[data-email = "indexAns"] .flag svg').attr("fill-opacity",0);
+    }
+
+    if(userAns[indexAns] % 2 == 0){
+      $(this).attr("fill-opacity",0);
+      userAns[indexAns] = ansVal / (2);
+    }
+    else{
+      $(this).attr("fill-opacity",1);
+      userAns[indexAns] = ansVal * (2);
+    }
+
+  });
+
+
+
 });
 
 

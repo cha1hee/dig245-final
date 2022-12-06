@@ -234,7 +234,7 @@ $(document).ready(function() {
 
      `;
   });
-  $(".emailList").html(emailList);
+  $(".email-list").html(emailList);
 
   // add listener to each email clicked
   $(".email").on("click", function() {
