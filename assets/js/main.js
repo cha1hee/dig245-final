@@ -227,7 +227,7 @@ $(document).ready(function() {
 
         <a href="#" class="email" data-email="${i}">
           <div class="row">
-            <div class="col-9" style="padding:10px 10px 10px 40px;">
+            <div class="col-9 " style="padding:10px 10px 10px 40px;">
 
 
           <b>${obj.name}</b> <br>
