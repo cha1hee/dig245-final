@@ -206,3 +206,23 @@ a {
 .intro-list{
   padding-left: 28%;
 }
+
+.user-results{
+  text-align: center;
+}
+
+.result-options{
+  text-align: center;
+}
+
+.result-options a{
+  text-decoration: none;
+  color: black;
+  background-color: #A9C6BA;
+}
+
+.result-options a:hover{
+  text-decoration: none;
+  /* color: g; */
+  background-color: #5F726A;
+}
