@@ -1,3 +1,5 @@
+import {userAns} from './main.js'
+
 let emails = [{
     subject: "Software Engineer Position Resume",
     from: "caseytravers33434@mail.com",
@@ -196,6 +198,8 @@ You have received this email because rubenjohnsoin@yourcompany.com shared a docu
 
 ];
 
+console.log(userAns);
+
 // extracting just the words from body (no html elements)
 function extractContent(s) {
   var span = document.createElement('span');
@@ -259,6 +263,9 @@ $(document).ready(function() {
 
     $(".email-body").html(str);
   });
+
+
+
 });
 
 

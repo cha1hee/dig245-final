@@ -287,19 +287,20 @@ $(document).ready(function() {
     indexAns = ($(this).parent().parent().parent().data("email"));
     ansVal = userAns[indexAns];
 
-    if (ansVal % 2 == 0 && ansVal > 0) {
+    if (ansVal == 2) {
       $(this).attr("fill-opacity",1);
       userAns[indexAns] = ansVal / (-2);
-      $('[data-email = "indexAns"] .flag svg').attr("fill-opacity",0);
+      $("[data-email =" + indexAns + "] .flag svg").attr("fill-opacity",0);
     }
-    else if (ansVal < 0) {
+    else if (ansVal == -1) {
       $(this).attr("fill-opacity",0);
       userAns[indexAns] = ansVal * (-1);
     }
-    else{
+    else if (ansVal == 1) {
       $(this).attr("fill-opacity",1);
       userAns[indexAns] = ansVal * (-1);
     }
+
   });
 
 
@@ -308,24 +309,24 @@ $(document).ready(function() {
     let ansVal;
     indexAns = ($(this).parent().parent().parent().data("email"));
     ansVal = userAns[indexAns];
-    if(userAns < 0){
+
+    if(ansVal == -1) {
       $(this).attr("fill-opacity",1);
       userAns[indexAns] = ansVal * (-2);
-      $('[data-email = "indexAns"] .flag svg').attr("fill-opacity",0);
+      $("*[data-email =" + indexAns + "] .trash svg").attr("fill-opacity",0);
     }
 
-    if(userAns[indexAns] % 2 == 0){
+    else if(ansVal == 2) {
       $(this).attr("fill-opacity",0);
       userAns[indexAns] = ansVal / (2);
     }
-    else{
+    else if(ansVal == 1) {
       $(this).attr("fill-opacity",1);
       userAns[indexAns] = ansVal * (2);
     }
-
   });
 
-
+  export const userAns;
 
 });
 
