@@ -299,6 +299,7 @@ $(document).ready(function() {
       $(this).attr("fill-opacity", 1);
       userAns[indexAns] = ansVal * (-1);
     }
+    console.log(userAns);
 
   });
 
@@ -320,6 +321,7 @@ $(document).ready(function() {
       $(this).attr("fill-opacity", 1);
       userAns[indexAns] = ansVal * (2);
     }
+    console.log(userAns);
   });
 
   //calculating final answers score
@@ -382,6 +384,14 @@ $(document).ready(function() {
       `;
     }
 
+    if (flaggedScam > 0) {
+      ansStr += `
+      KEEP AN EYE OUT!
+      <br>
+      YOU FLAGGED ${flaggedScam} SCAMS
+      `
+    }
+
     else if (keptFlag > 0) {
       ansStr += `
       KEEP AN EYE OUT!
@@ -405,6 +415,7 @@ $(document).ready(function() {
 
     $(".user-results").html(ansStr);
   });
+
 });
 
 
