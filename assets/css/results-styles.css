@@ -51,9 +51,14 @@ a {
   background-color: #FF5555;
 }
 
-.email[data-email='0']:hover, .email[data-email='4']:hover, .email[data-email='7']:hover {
+.email[data-email='4']:hover, .email[data-email='7']:hover {
   color: black;
   background-color: #33AA33;
+}
+
+.email[data-email='0']:hover {
+  color: black;
+  background-color: #EEEE55;
 }
 
 [data-email] {
@@ -130,7 +135,7 @@ a {
 
 
 [data-email="0"] {
-  background-color: green;
+  background-color: yellow;
 }
 
 [data-email="1"] {
@@ -154,7 +159,7 @@ a {
 }
 
 [data-email="6"] {
-  background-color: red;
+  background-color: green;
 }
 
 [data-email="7"] {
