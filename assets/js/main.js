@@ -196,8 +196,8 @@ You have received this email because rubenjohnsoin@yourcompany.com shared a docu
 
 ];
 
-let answerKey=[2, -1, -1, -1, 1, -1, 1, 1, -1];
-let userAns = [1, 1 , 1 , 1 , 1 , 1 , 1 , 1 , 1];
+let answerKey = [2, -1, -1, -1, 1, -1, 1, 1, -1];
+let userAns = [1, 1, 1, 1, 1, 1, 1, 1, 1];
 
 
 
@@ -281,54 +281,132 @@ $(document).ready(function() {
     $(".email-body").html(str);
   });
 
-  $('*[data-email] .trash svg').on("click",function(){
+  // behavior if trash clicked
+  $('*[data-email] .trash svg').on("click", function() {
     let indexAns = -1;
     let ansVal;
     indexAns = ($(this).parent().parent().parent().data("email"));
     ansVal = userAns[indexAns];
 
     if (ansVal == 2) {
-      $(this).attr("fill-opacity",1);
+      $(this).attr("fill-opacity", 1);
       userAns[indexAns] = ansVal / (-2);
-      $("[data-email =" + indexAns + "] .flag svg").attr("fill-opacity",0);
-    }
-    else if (ansVal == -1) {
-      $(this).attr("fill-opacity",0);
+      $("[data-email =" + indexAns + "] .flag svg").attr("fill-opacity", 0);
+    } else if (ansVal == -1) {
+      $(this).attr("fill-opacity", 0);
       userAns[indexAns] = ansVal * (-1);
-    }
-    else if (ansVal == 1) {
-      $(this).attr("fill-opacity",1);
+    } else if (ansVal == 1) {
+      $(this).attr("fill-opacity", 1);
       userAns[indexAns] = ansVal * (-1);
     }
 
   });
 
-
-  $('*[data-email] .flag svg').on("click",function(){
+  // behavior if flag is clicked
+  $('*[data-email] .flag svg').on("click", function() {
     let indexAns = -1;
     let ansVal;
     indexAns = ($(this).parent().parent().parent().data("email"));
     ansVal = userAns[indexAns];
 
-    if(ansVal == -1) {
-      $(this).attr("fill-opacity",1);
+    if (ansVal == -1) {
+      $(this).attr("fill-opacity", 1);
       userAns[indexAns] = ansVal * (-2);
-      $("*[data-email =" + indexAns + "] .trash svg").attr("fill-opacity",0);
-    }
-
-    else if(ansVal == 2) {
-      $(this).attr("fill-opacity",0);
+      $("*[data-email =" + indexAns + "] .trash svg").attr("fill-opacity", 0);
+    } else if (ansVal == 2) {
+      $(this).attr("fill-opacity", 0);
       userAns[indexAns] = ansVal / (2);
-    }
-    else if(ansVal == 1) {
-      $(this).attr("fill-opacity",1);
+    } else if (ansVal == 1) {
+      $(this).attr("fill-opacity", 1);
       userAns[indexAns] = ansVal * (2);
     }
   });
 
-  export const userAns;
+  //calculating final answers score
+  $('.final-ans').on("click", function() {
+    var keptScam = 0;
+    var keptFlag = 0;
+    var deletedOK = 0;
+    var deletedFlag = 0;
+    var flaggedOK = 0;
+    var flaggedScam = 0;
+    var correct = 0;
 
+    for (let i = 0; i < userAns.length; i++) {
+      userVal = userAns[i];
+      ansVal = answerKey[i];
+      if (userVal == 2) {
+        if (ansVal == 2) {
+          correct++;
+        }
+        else if (ansVal == 1) {
+          flaggedOK++;
+        }
+        else if (ansVal == -1) {
+          flaggedScam++;
+        }
+      }
+
+      else if (userVal == 1) {
+        if (ansVal == 2) {
+          keptFlag++;
+        }
+        else if (ansVal == 1) {
+          correct++;
+        }
+        else if (ansVal == -1) {
+          keptScam++;
+        }
+      }
+
+      else if (userVal == -1) {
+        if (ansVal == 2) {
+          deletedFlag++;
+        }
+        else if (ansVal == 1) {
+          deletedOK++;
+        }
+        else if (ansVal == -1) {
+          correct++;
+        }
+      }
+    }
+
+    let ansStr = "";
+
+    if (keptScam > 0) {
+      ansStr += `
+      ALERT YOUR DEVICE HAS BEEN COMPROMISED
+      <br>
+      YOU'VE OPENED ${keptScam} SCAMS
+      `;
+    }
+
+    else if (keptFlag > 0) {
+      ansStr += `
+      KEEP AN EYE OUT!
+      <br>
+      YOU'VE DECIDED TO OPEN ${keptFlag} SUSPICIOUS ITEMS
+      `;
+    }
+
+    else if (deletedOK > 0 || deletedFlag > 0){
+      ansStr += `
+      You might be too cautious... You deleted ${deletedOK} items that were genuine
+      and ${deletedFlag} items that just need more investigation
+      `;
+    }
+
+    else if(correct == answerKey.length){
+      ansStr += `
+      Congrats~! You got identified the scams and suspicious emails correctly!
+      `
+    }
+
+    $(".user-results").html(ansStr);
+  });
 });
+
 
 
 

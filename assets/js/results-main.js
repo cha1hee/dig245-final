@@ -1,4 +1,3 @@
-import {userAns} from './main.js'
 
 let emails = [{
     subject: "Software Engineer Position Resume",
@@ -198,7 +197,6 @@ You have received this email because rubenjohnsoin@yourcompany.com shared a docu
 
 ];
 
-console.log(userAns);
 
 // extracting just the words from body (no html elements)
 function extractContent(s) {

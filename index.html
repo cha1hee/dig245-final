@@ -51,9 +51,11 @@
 					<div class="col-8">
 						<input class="search" type="text" placeholder="Search...">
 					</div>
+
+					<!-- question marks icon popup -->
 					<div class="col-1 text-center confused">
 						<svg class="question-icon" width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<a href="#container" data-reveal-id="myPopup">
+							<a href="#container" data-reveal-id="summary-pop">
 							<circle cx="25.5" cy="25.5" r="25.5" fill="#D9D9D9" />
 							<path
 								d="M23.4659 29.0909V28.9886C23.4773 27.9034 23.5909 27.0398 23.8068 26.3977C24.0227 25.7557 24.3295 25.2358 24.7273 24.8381C25.125 24.4403 25.6023 24.0739 26.1591 23.7386C26.4943 23.5341 26.7955 23.2926 27.0625 23.0142C27.3295 22.7301 27.5398 22.4034 27.6932 22.0341C27.8523 21.6648 27.9318 21.2557 27.9318 20.8068C27.9318 20.25 27.8011 19.767 27.5398 19.358C27.2784 18.9489 26.929 18.6335 26.4915 18.4119C26.054 18.1903 25.5682 18.0795 25.0341 18.0795C24.5682 18.0795 24.1193 18.1761 23.6875 18.3693C23.2557 18.5625 22.8949 18.8665 22.6051 19.2812C22.3153 19.696 22.1477 20.2386 22.1023 20.9091H19.9545C20 19.9432 20.25 19.1165 20.7045 18.429C21.1648 17.7415 21.7699 17.2159 22.5199 16.8523C23.2756 16.4886 24.1136 16.3068 25.0341 16.3068C26.0341 16.3068 26.9034 16.5057 27.642 16.9034C28.3864 17.3011 28.9602 17.8466 29.3636 18.5398C29.7727 19.233 29.9773 20.0227 29.9773 20.9091C29.9773 21.5341 29.8807 22.0994 29.6875 22.6051C29.5 23.1108 29.2273 23.5625 28.8693 23.9602C28.517 24.358 28.0909 24.7102 27.5909 25.017C27.0909 25.3295 26.6903 25.6591 26.3892 26.0057C26.0881 26.3466 25.8693 26.7528 25.733 27.2244C25.5966 27.696 25.5227 28.2841 25.5114 28.9886V29.0909H23.4659ZM24.5568 34.1364C24.1364 34.1364 23.7756 33.9858 23.4744 33.6847C23.1733 33.3835 23.0227 33.0227 23.0227 32.6023C23.0227 32.1818 23.1733 31.821 23.4744 31.5199C23.7756 31.2187 24.1364 31.0682 24.5568 31.0682C24.9773 31.0682 25.3381 31.2187 25.6392 31.5199C25.9403 31.821 26.0909 32.1818 26.0909 32.6023C26.0909 32.8807 26.0199 33.1364 25.8778 33.3693C25.7415 33.6023 25.5568 33.7898 25.3239 33.9318C25.0966 34.0682 24.8409 34.1364 24.5568 34.1364Z"
@@ -61,7 +63,7 @@
 							</a>
 						</svg>
 						<div id="container">
-							<div class="reveal-modal" id="myPopup">
+							<div class="reveal-modal" id="summary-pop">
 								<div class="row" style="height:100%;">
 									<div class="col-2"></div>
 									<div class="col-8 intro-content">
@@ -90,10 +92,26 @@
 							</div>
 						</div>
 					</div>
+					<!-- end question mark icon -->
+					<!-- results pop up -->
 					<div class="col-2 final-ans">
-						<a href="mailpractice.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Submit</a>
+						<a href="#results" data-reveal-id="results-pop" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Submit</a>
 					</div>
 
+					<div id="results">
+						<div class="reveal-modal" id="results-pop">
+							<div class="row user-results" >
+								<!-- js content goes here -->
+						</div>
+						<div class="row">
+							<a href="#">change your answers</a>
+							<br>
+							<a href="mailpractice.html">see answers</a>
+						</div>
+					</div>
+
+
+					<!-- end results pop up -->
 				</div>
 			</div>
 		</div>
@@ -117,7 +135,7 @@
 	<script>
 	// When the user clicks on <div>, open the popup
 	function myFunction() {
-	  var popup = document.getElementById("myPopup");
+	  var popup = document.getElementById("summary-pop");
 	  popup.classList.toggle("show");
 	}
 	</script>
