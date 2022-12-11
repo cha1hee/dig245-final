@@ -1,4 +1,3 @@
-
 let emails = [{
     subject: "Software Engineer Position Resume",
     from: "caseytravers33434@mail.com",
@@ -41,7 +40,8 @@ let emails = [{
                 </div>
                 <div class="row" style="height:10px;"></div>
               </form>
-            </div>`
+            </div>`,
+            bodyprev: "Seems like there has been a suspicious attempt to log into your account."
   },
   {
     subject: "Project Collaboration Google Doc",
@@ -61,7 +61,8 @@ let emails = [{
       <div class="row" style="height:20px;"></div>
       Terreasa
       <br><p style="color:grey;">CTO</p>
-    </div>`
+    </div>`,
+    bodyprev: "Here is the link for the google doc for the Bose Trajectory Project."
   },
   {
     subject: "Shared a Doc With You",
@@ -83,7 +84,8 @@ let emails = [{
       Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
 You have received this email because jaredrachse@yourcompany.com shared a document with you from Google Docs.
       </div>
-    </div>`
+    </div>`,
+    bodyprev:"Jared Drachse shared a document Jared Drachse "
   },
   {
     subject: "Amazon Account Cancellation",
@@ -108,7 +110,8 @@ You have received this email because jaredrachse@yourcompany.com shared a docume
           <a href="https://prime.amazon.com/account/delete/1Qfd513FGd53ZYcqow5hdsghTE" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Sign Up</a>
         </div>
       </div>
-    </div>`
+    </div>`,
+    bodyprev:"We're Sorry to See You Go Protecting your privacy and "
   },
   // {
   //   subject: "Software Engineer Position Resume",
@@ -136,13 +139,15 @@ You have received this email because jaredrachse@yourcompany.com shared a docume
     <br> Thanks,
     <br> Dustin
     <br><p style="color:grey;">CFO</p>
-    </div>`
+    </div>`,
+    bodyprev:"Hey,I'm on my way from a client meeting right now and need help ASAP."
   },
   {
     subject: "Project Collaboration Google Doc",
     from: "terreasa@company.com",
     name: "Terreasa Jalen",
-    body: `<p><hr><hr>Hello <b>world</b></p>`
+    body: `<p><hr><hr>Hello <b>world</b></p>`,
+    bodyprev:"Hello"
   },
   {
     subject: "Shared a Doc With You",
@@ -163,7 +168,8 @@ You have received this email because jaredrachse@yourcompany.com shared a docume
       Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
 You have received this email because rubenjohnsoin@yourcompany.com shared a document with you from Google Docs.
       </div>
-    </div>`
+    </div>`,
+    bodyprev:"Ruben Johnsoin shared a document Ruben Johnsoin "
   },
   {
     subject: "Microsoft Account Cancellation",
@@ -191,7 +197,8 @@ You have received this email because rubenjohnsoin@yourcompany.com shared a docu
       <div class="row" style="height:30px;"></div>
       If this was a mistake, quickly take action to stop this process. If not, please
       ignore this message and your account will be terminated shortly.
-    </div>`
+    </div>`,
+    bodyprev:"our Account Termination Process Has Begun. We received your request on 12/02/22 to terminate your microsoft account."
   }
 
 
@@ -227,9 +234,9 @@ $(document).ready(function() {
             <div class="col-12" style="padding:10px 10px 10px 40px;">
 
 
-          <b>${obj.name}</b> <br>
-          ${obj.subject.length > 35 ? obj.subject.substr(0,35)+'...' : obj.subject}<br>
-          <small>${body_list[i].substr(0,20)}</small>
+            <b>${obj.name}</b> <br>
+            ${obj.subject.length > 27 ? obj.subject.substr(0,27)+'...' : obj.subject}<br>
+            <div class="smallprev">${obj.bodyprev.length > 30 ? obj.bodyprev.substr(0,30)+'...' : obj.bodyprev}</div>
           </div>
         </div>
         </a>

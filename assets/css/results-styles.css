@@ -13,10 +13,16 @@ a {
 }
 
 .results {
-  padding: 16px;
+  padding: 20px 0 0 0;
+  font-size: 24px;
 }
 
-.final-ans, .confused {
+.smallprev{
+  font-size: 14px;
+  color: #494747;
+}
+
+.final-ans, .confused{
   margin: 25.5px 0;
 }
 
@@ -48,17 +54,17 @@ a {
 
 .email:hover {
   color: black;
-  background-color: #FF5555;
+  background-color: #FF8888;
 }
 
 .email[data-email='4']:hover, .email[data-email='7']:hover {
   color: black;
-  background-color: #33AA33;
+  background-color: #88FF88;
 }
 
 .email[data-email='0']:hover {
   color: black;
-  background-color: #EEEE55;
+  background-color: #FFFF77;
 }
 
 [data-email] {
@@ -135,39 +141,39 @@ a {
 
 
 [data-email="0"] {
-  background-color: yellow;
+  background-color: #FFC700;
 }
 
 [data-email="1"] {
-  background-color: red;
+  background-color: #FF4141;
 }
 
 [data-email="2"] {
-  background-color: red;
+  background-color: #FF4141;
 }
 
 [data-email="3"] {
-  background-color: red;
+  background-color: #FF4141;
 }
 
 [data-email="4"] {
-  background-color: green;
+  background-color: #51B72E;
 }
 
 [data-email="5"] {
-  background-color: red;
+  background-color: #FF4141;
 }
 
 [data-email="6"] {
-  background-color: green;
+  background-color: #51B72E;
 }
 
 [data-email="7"] {
-  background-color: green;
+  background-color: #51B72E;
 }
 
 [data-email="8"] {
-  background-color: red;
+  background-color: #FF4141;
 }
 
 

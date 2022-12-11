@@ -22,12 +22,22 @@ a {
   padding: 11px;
 }
 
+.smallprev{
+  font-size: 14px;
+  color: #494747;
+}
+
 .logo{
   padding: 13px;
 }
 
-.trash, .flag {
-  padding: 34.5px 0 0 0;
+.trash {
+  padding: 9% 0 0 0;
+  opacity: 100%;
+}
+
+.report {
+  padding: 8% 0 0 0;
   opacity: 100%;
 }
 

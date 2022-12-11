@@ -40,7 +40,8 @@ let emails = [{
                 </div>
                 <div class="row" style="height:10px;"></div>
               </form>
-            </div>`
+            </div>`,
+            bodyprev: "Seems like there has been a suspicious attempt to log into your account."
   },
   {
     subject: "Project Collaboration Google Doc",
@@ -60,7 +61,8 @@ let emails = [{
       <div class="row" style="height:20px;"></div>
       Terreasa
       <br><p style="color:grey;">CTO</p>
-    </div>`
+    </div>`,
+    bodyprev: "Here is the link for the google doc for the Bose Trajectory Project."
   },
   {
     subject: "Shared a Doc With You",
@@ -82,7 +84,8 @@ let emails = [{
       Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
 You have received this email because jaredrachse@yourcompany.com shared a document with you from Google Docs.
       </div>
-    </div>`
+    </div>`,
+    bodyprev:"Jared Drachse shared a document Jared Drachse "
   },
   {
     subject: "Amazon Account Cancellation",
@@ -107,7 +110,8 @@ You have received this email because jaredrachse@yourcompany.com shared a docume
           <a href="https://prime.amazon.com/account/delete/1Qfd513FGd53ZYcqow5hdsghTE" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Sign Up</a>
         </div>
       </div>
-    </div>`
+    </div>`,
+    bodyprev:"We're Sorry to See You Go Protecting your privacy and "
   },
   // {
   //   subject: "Software Engineer Position Resume",
@@ -135,13 +139,15 @@ You have received this email because jaredrachse@yourcompany.com shared a docume
     <br> Thanks,
     <br> Dustin
     <br><p style="color:grey;">CFO</p>
-    </div>`
+    </div>`,
+    bodyprev:"Hey,I'm on my way from a client meeting right now and need help ASAP."
   },
   {
     subject: "Project Collaboration Google Doc",
     from: "terreasa@company.com",
     name: "Terreasa Jalen",
-    body: `<p><hr><hr>Hello <b>world</b></p>`
+    body: `<p><hr><hr>Hello <b>world</b></p>`,
+    bodyprev:"Hello"
   },
   {
     subject: "Shared a Doc With You",
@@ -162,7 +168,8 @@ You have received this email because jaredrachse@yourcompany.com shared a docume
       Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
 You have received this email because rubenjohnsoin@yourcompany.com shared a document with you from Google Docs.
       </div>
-    </div>`
+    </div>`,
+    bodyprev:"Ruben Johnsoin shared a document Ruben Johnsoin "
   },
   {
     subject: "Microsoft Account Cancellation",
@@ -190,23 +197,24 @@ You have received this email because rubenjohnsoin@yourcompany.com shared a docu
       <div class="row" style="height:30px;"></div>
       If this was a mistake, quickly take action to stop this process. If not, please
       ignore this message and your account will be terminated shortly.
-    </div>`
+    </div>`,
+    bodyprev:"our Account Termination Process Has Begun. We received your request on 12/02/22 to terminate your microsoft account."
   }
 
 
 ];
 
-let answerKey = [2, -1, -1, -1, 1, -1, 1, 1, -1];
+let answerKey = [-1, 2, 2, 2, 1, 2, 1, 1, 2];
 let userAns = [1, 1, 1, 1, 1, 1, 1, 1, 1];
 
 
 
-// extracting just the words from body (no html elements)
-function extractContent(s) {
-  var span = document.createElement('span');
-  span.innerHTML = s;
-  return span.textContent || span.innerText;
-};
+// // extracting just the words from body (no html elements)
+// function extractContent(s) {
+//   var span = document.createElement('span');
+//   span.innerHTML = s;
+//   return span.textContent || span.innerText;
+// };
 
 
 // setting up the rest of html doc
@@ -214,11 +222,11 @@ $(document).ready(function() {
   // loop through emails and add them to the list on the left...
   let emailList = "";
 
-  let body_list = [];
-  emails.forEach(function(obj, i) {
-    // console.log(obj.body);
-    body_list.push(extractContent(obj.body));
-  })
+  // let body_list = [];
+  // emails.forEach(function(obj, i) {
+  //   // console.log(obj.body);
+  //   body_list.push(extractContent(obj.body));
+  // })
 
 
   emails.forEach(function(obj, i) {
@@ -232,23 +240,22 @@ $(document).ready(function() {
 
           <b>${obj.name}</b> <br>
           ${obj.subject.length > 27 ? obj.subject.substr(0,27)+'...' : obj.subject}<br>
-          <small>${body_list[i].substr(0,20)}</small>
-
-
+          <div class="smallprev">${obj.bodyprev.length > 30 ? obj.bodyprev.substr(0,30)+'...' : obj.bodyprev}</div>
           </div>
 
           <div class="col-1 trash">
             <svg  width="19" height="24" viewBox="0 0 19 24" fill="black" fill-opacity="0" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 23L1 4.88235H18L15 23H4Z" stroke="#6B6767" stroke-width="0.5"/>
-              <path d="M1 4.01961V2.29412H8V1H11V2.29412H18V4.01961H1Z" stroke="#6B6767" stroke-width="0.5"/>
+              <path d="M4 23L1 4.88235H18L15 23H4Z" stroke="#494747" stroke-width="0.5"/>
+              <path d="M1 4.01961V2.29412H8V1H11V2.29412H18V4.01961H1Z" stroke="#494747" stroke-width="0.5"/>
             </svg>
-
           </div>
-          <div class="col-1 flag text-center">
-            <svg width="19" height="23" viewBox="0 0 19 23" fill="red" fill-opacity="0" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 13.18V1.42V1H3.125V2.26L18 7.72L3.125 13.18V22H1V13.18Z" stroke="#6B6767" stroke-width="0.5"/>
-          </svg>
 
+          <div class="col-1 report text-center">
+            <svg width="35" height="35" viewBox="0 0 35 35" fill="yellow" fill-opacity="0" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.93331 17.334L11.1337 6.59471L23.5343 6.59471L29.7347 17.334L23.5343 28.0733L11.1337 28.0733L4.93331 17.334Z" stroke="#494747" stroke-width="0.5"/>
+              <path d="M18 11H17L17.3333 19H17.7778L18 11Z" stroke="#494747"/>
+              <path d="M17.55 22C17.2742 22 17.0503 21.7763 17.0502 21.5002C17.0501 21.224 17.274 21 17.55 21C17.8259 21 18.0498 21.2238 18.0498 21.5C18.0498 21.7762 17.8259 22 17.55 22Z" stroke="#494747"/>
+            </svg>
           </div>
         </div>
         </a>
@@ -291,7 +298,7 @@ $(document).ready(function() {
     if (ansVal == 2) {
       $(this).attr("fill-opacity", 1);
       userAns[indexAns] = ansVal / (-2);
-      $("[data-email =" + indexAns + "] .flag svg").attr("fill-opacity", 0);
+      $("[data-email =" + indexAns + "] .report svg").attr("fill-opacity", 0);
     } else if (ansVal == -1) {
       $(this).attr("fill-opacity", 0);
       userAns[indexAns] = ansVal * (-1);
@@ -303,8 +310,8 @@ $(document).ready(function() {
 
   });
 
-  // behavior if flag is clicked
-  $('*[data-email] .flag svg').on("click", function() {
+  // behavior if report is clicked
+  $('*[data-email] .report svg').on("click", function() {
     let indexAns = -1;
     let ansVal;
     indexAns = ($(this).parent().parent().parent().data("email"));
@@ -326,12 +333,12 @@ $(document).ready(function() {
 
   //calculating final answers score
   $('.final-ans').on("click", function() {
-    var keptScam = 0;
-    var keptFlag = 0;
+    var deletedScam = 0;
+    var reportedSus = 0;
+    var reportedOK = 0;
     var deletedOK = 0;
-    var deletedFlag = 0;
-    var flaggedOK = 0;
-    var flaggedScam = 0;
+    var keptScam = 0;
+    var keptSus = 0;
     var correct = 0;
 
     for (let i = 0; i < userAns.length; i++) {
@@ -340,35 +347,25 @@ $(document).ready(function() {
       if (userVal == 2) {
         if (ansVal == 2) {
           correct++;
+        } else if (ansVal == 1) {
+          reportedOK;
+        } else if (ansVal == -1) {
+          reportedSus++;
         }
-        else if (ansVal == 1) {
-          flaggedOK++;
-        }
-        else if (ansVal == -1) {
-          flaggedScam++;
-        }
-      }
-
-      else if (userVal == 1) {
+      } else if (userVal == 1) {
         if (ansVal == 2) {
-          keptFlag++;
-        }
-        else if (ansVal == 1) {
-          correct++;
-        }
-        else if (ansVal == -1) {
           keptScam++;
+        } else if (ansVal == 1) {
+          correct++;
+        } else if (ansVal == -1) {
+          keptSus++;
         }
-      }
-
-      else if (userVal == -1) {
+      } else if (userVal == -1) {
         if (ansVal == 2) {
-          deletedFlag++;
-        }
-        else if (ansVal == 1) {
+          deletedScam++;
+        } else if (ansVal == 1) {
           deletedOK++;
-        }
-        else if (ansVal == -1) {
+        } else if (ansVal == -1) {
           correct++;
         }
       }
@@ -377,37 +374,50 @@ $(document).ready(function() {
     let ansStr = "";
 
     if (keptScam > 0) {
-      ansStr += `
-      ALERT YOUR DEVICE HAS BEEN COMPROMISED
-      <br>
-      YOU'VE OPENED ${keptScam} SCAMS
-      `;
+      if(keptScam == 1){
+        ansStr += `
+        ALERT YOUR DEVICE HAS BEEN COMPROMISED
+        <br>
+        YOU'VE OPENED ${keptScam} SCAM
+        `;
+      }
+      else{
+        ansStr += `
+        ALERT YOUR DEVICE HAS BEEN COMPROMISED
+        <br>
+        YOU'VE OPENED ${keptScam} SCAMS
+        `;
+      }
     }
 
-    if (flaggedScam > 0) {
+    if (deletedScam > 0) {
+      if(deletedScam ==1){
+        ansStr += `
+        TELL YOUR YOUR CONTACTS AND PEERS TO KEEP AN EYE OUT!
+        <br>
+        YOU DID NOT REPORT ${deletedScam} SCAM
+        `;
+      }
+      else{
+        ansStr += `
+        TELL YOUR YOUR CONTACTS AND PEERS TO KEEP AN EYE OUT!
+        <br>
+        YOU DID NOT REPORT ${deletedScam} SCAMS
+        `;
+      }
+
+    } else if (keptSus > 0) {
       ansStr += `
       KEEP AN EYE OUT!
       <br>
-      YOU FLAGGED ${flaggedScam} SCAMS
-      `
-    }
-
-    else if (keptFlag > 0) {
-      ansStr += `
-      KEEP AN EYE OUT!
-      <br>
-      YOU'VE DECIDED TO OPEN ${keptFlag} SUSPICIOUS ITEMS
+      YOU'VE DECIDED TO OPEN ${keptreport} SUSPICIOUS ITEM
       `;
-    }
-
-    else if (deletedOK > 0 || deletedFlag > 0){
+    } else if (reportedOK > 0 || reportedSus > 0) {
       ansStr += `
-      You might be too cautious... You deleted ${deletedOK} items that were genuine
-      and ${deletedFlag} items that just need more investigation
+      You might be too cautious... You reported ${reportedOK} items that were genuine
+      and ${reportedSus} item that just need more investigation
       `;
-    }
-
-    else if(correct == answerKey.length){
+    } else if (correct == answerKey.length) {
       ansStr += `
       Congrats~! You got identified the scams and suspicious emails correctly!
       `
