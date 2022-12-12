@@ -1,6 +1,252 @@
 /* css */
 
-body {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  body {
+    overflow: hidden;
+    background-color: #5D756B;
+  }
+
+  input {
+    border-radius: 10px;
+  }
+
+  a {
+    overflow-wrap: break-word;
+  }
+
+  .objective {
+    padding: 20px 0 0 0;
+    font-size: 24px;
+  }
+
+  .prof-pic {
+    padding: 11px;
+  }
+
+  .smallprev{
+    font-size: 14px;
+    color: #494747;
+  }
+
+  .logo{
+    padding: 13px;
+  }
+
+  .trash {
+    padding: 7.75% 0 0 0;
+    opacity: 100%;
+  }
+
+  .report {
+    padding: 7.25% 0 0 0;
+    opacity: 100%;
+  }
+
+  .tophead {
+    background-color: #7a9e80;
+    height: 10%;
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  .breakpoint {
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: .9rem;
+  }
+
+  .email {
+    background: #EDEDED;
+    display: block;
+    text-decoration: none;
+    color: black;
+  }
+
+  .email:hover {
+    color: black;
+    background-color: #D9D9D9;
+  }
+
+  [data-email] {
+    border-bottom: 2px solid;
+    border-color: #5D756B;
+  }
+
+  .read {
+    background: #CAD2CF;
+  }
+
+  #email-holder {
+    height: 60%;
+    border-radius: 10px;
+  }
+
+  .email-list {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .email-body {
+    background-color: #EDEDED;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .search {
+    width: 100%;
+    height: 45%;
+    background-color: #F1F1F1;
+    outline: 0;
+    border-radius: 10px;
+    border-style: hidden;
+    margin: 25.5px 0;
+    padding: 16.5px;
+    font-size: 24px;
+  }
+
+  .final-ans, .confused {
+    margin: 25.5px 0;
+  }
+
+  .email-body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .email-body::-webkit-scrollbar-thumb {
+    background: rgba(90, 90, 90);
+    border-radius: 0 10px 10px 0;
+  }
+
+  .email-body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0 10px 10px 0;
+  }
+
+  .email-list::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .email-list::-webkit-scrollbar-thumb {
+    background: rgba(90, 90, 90);
+  }
+
+  .email-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+
+
+  /* summary popup */
+
+  #container {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+      visibility: hidden;
+      display: none;
+      background-color: rgba(93,117,107,1); /* complimenting your modal colors */
+  }
+  #container:target {
+      visibility: visible;
+      display: block;
+  }
+  .reveal-modal {
+      position: relative;
+      margin: 0 auto;
+      font-size: 24px;
+      text-align: left;
+      height: 100%;
+  }
+  .intro-content{
+    height: 100%;
+    background-color: #CAD2CF;
+    padding: 40px;
+  }
+
+  .return{
+    position: absolute;
+    right: 350px;
+    bottom: 100px;
+  }
+
+  .intro-list{
+    padding-left: 28%;
+  }
+
+
+  /* results popup */
+
+  #results {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+      visibility: hidden;
+      display: none;
+      background-color: rgba(93,117,107,1); /* complimenting your modal colors */
+  }
+  #results:target {
+      visibility: visible;
+      display: block;
+  }
+  .reveal-modal {
+      position: relative;
+      margin: 0 auto;
+      font-size: 24px;
+      text-align: left;
+      height: 100%;
+  }
+  .intro-content{
+    height: 100%;
+    background-color: #CAD2CF;
+    padding: 40px;
+  }
+
+  .return{
+    position: absolute;
+    right: 350px;
+    bottom: 100px;
+  }
+
+  .intro-list{
+    padding-left: 28%;
+  }
+
+  .user-results{
+    text-align: center;
+  }
+
+  .result-options{
+    text-align: center;
+  }
+
+  .result-options a{
+    text-decoration: none;
+    color: black;
+    background-color: #A9C6BA;
+  }
+
+  .result-options a:hover{
+    text-decoration: none;
+    /* color: g; */
+    background-color: #2F3331;
+  }
+
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {body {
   overflow: hidden;
   background-color: #5D756B;
 }
@@ -237,4 +483,5 @@ a {
   text-decoration: none;
   /* color: g; */
   background-color: #2F3331;
+}
 }
