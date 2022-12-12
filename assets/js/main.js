@@ -125,7 +125,7 @@ You have received this email because jaredrachse@yourcompany.com shared a docume
     name: "Dustin Alexander",
     body: `
     <div class="col-12">
-    <p>Hey,
+    <p>Hey,<br>
     <br> I'm on my way from a client meeting right now and need help ASAP. The client
     requested a refund that needs to be processed by <b>tomorrow</b> or else they said,
     they'd drop us. Please transfer $15,000 to their business account as soon as you
@@ -143,11 +143,21 @@ You have received this email because jaredrachse@yourcompany.com shared a docume
     bodyprev:"Hey,I'm on my way from a client meeting right now and need help ASAP."
   },
   {
-    subject: "Project Collaboration Google Doc",
-    from: "terreasa@company.com",
-    name: "Terreasa Jalen",
-    body: `<p><hr><hr>Hello <b>world</b></p>`,
-    bodyprev:"Hello"
+    subject: "Next One on Ones",
+    from: "gershon@company.com",
+    name: "Gershon Kemuel",
+    body: `
+    <div class="col-12">
+    <p><hr><hr>Hey,<br>
+    <br> How have you been? I just wanted to check in since it's been a while
+    since we last had our one on ones. I hope your new boss has been treating you okay. Work has
+    been pretty busy lately so that's why I've been MIA, but I would love to check back in sometime
+    next week to have another one on one! Let me know what your schedule looks like and we can see
+    what works best for both of us.
+    <br><br>Hope to see you soon,
+    <br> Gershon
+    <br><p style="color:grey;">Marketing Team Lead</p></div>`,
+    bodyprev:"Hey! How have you been? I just wanted to check in since"
   },
   {
     subject: "Shared a Doc With You",
